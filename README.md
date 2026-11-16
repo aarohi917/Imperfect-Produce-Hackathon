@@ -71,7 +71,5 @@ This project was built with Lovable. Object detection powered by YOLO-World (Ult
 - React
 - Tailwind CSS
 
-Intended Users
-Current operational users are farmers, Checkers, Chief Officers, and organic vegetable organizations. Middle-income families and left-behind children are intended future customers or social-impact beneficiaries—not groups already served by dedicated consumer or child-support features.
 
 
