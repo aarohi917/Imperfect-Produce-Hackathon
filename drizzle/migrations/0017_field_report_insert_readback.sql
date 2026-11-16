@@ -1,0 +1,2 @@
+CREATE OR REPLACE FUNCTION public.fi_report_access(p_report uuid) RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path=public AS $$ SELECT EXISTS(SELECT 1 FROM fi_reports r JOIN fi_fields z ON z.id=r.field_id WHERE r.id=p_report AND fi_field_access(z.id) AND (r.submitted_by=auth.uid() OR r.sample OR fi_manage(z.farm_id))) $$;
+ALTER POLICY fi_report_read ON public.fi_reports USING(public.fi_field_access(field_id) AND (submitted_by=auth.uid() OR sample OR EXISTS(SELECT 1 FROM public.fi_fields z WHERE z.id=field_id AND public.fi_manage(z.farm_id))));

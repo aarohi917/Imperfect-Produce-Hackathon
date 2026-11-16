@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "asset_id": "66fc508d-40d0-4b31-9651-a6872505c42a",
+  "project_id": "f53969e8-d492-4656-bea8-641ff4d7d0a3",
+  "url": "/__l5e/assets-v1/66fc508d-40d0-4b31-9651-a6872505c42a/yolov8n.onnx",
+  "r2_key": "a/v1/f53969e8-d492-4656-bea8-641ff4d7d0a3/66fc508d-40d0-4b31-9651-a6872505c42a/yolov8n.onnx",
+  "original_filename": "yolov8n.onnx",
+  "size": 12662737,
+  "content_type": "application/octet-stream",
+  "created_at": "2026-11-15T02:03:27Z"
+}

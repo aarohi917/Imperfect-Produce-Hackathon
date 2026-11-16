@@ -1,0 +1,18 @@
+CREATE TABLE public.farmer_memories (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL DEFAULT auth.uid(), content text NOT NULL CHECK (length(trim(content)) BETWEEN 1 AND 1000), created_at timestamptz NOT NULL DEFAULT now());
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.farmer_memories TO authenticated;
+GRANT ALL ON public.farmer_memories TO service_role;
+ALTER TABLE public.farmer_memories ENABLE ROW LEVEL SECURITY;
+CREATE POLICY memory_owner ON public.farmer_memories FOR ALL TO authenticated USING (user_id = auth.uid()) WITH CHECK (user_id = auth.uid());
+CREATE TABLE public.farmer_guide_preferences (user_id uuid PRIMARY KEY DEFAULT auth.uid(), recall_enabled boolean NOT NULL DEFAULT true);
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.farmer_guide_preferences TO authenticated;
+GRANT ALL ON public.farmer_guide_preferences TO service_role;
+ALTER TABLE public.farmer_guide_preferences ENABLE ROW LEVEL SECURITY;
+CREATE POLICY preferences_owner ON public.farmer_guide_preferences FOR ALL TO authenticated USING (user_id = auth.uid()) WITH CHECK (user_id = auth.uid());
+CREATE TABLE public.farmer_goals (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL DEFAULT auth.uid(), title text NOT NULL CHECK (length(trim(title)) BETWEEN 1 AND 200), metric text NOT NULL CHECK (metric IN ('margin','cost_per_kg','custom')), target numeric NOT NULL, baseline numeric, baseline_date date NOT NULL DEFAULT current_date, due_date date NOT NULL, crop text, measurement text NOT NULL DEFAULT '', current_value numeric, status text NOT NULL DEFAULT 'active' CHECK (status IN ('active','paused')), created_at timestamptz NOT NULL DEFAULT now(), CHECK (metric != 'margin' OR target BETWEEN -100 AND 100), CHECK (metric != 'cost_per_kg' OR target >= 0));
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.farmer_goals TO authenticated;
+GRANT ALL ON public.farmer_goals TO service_role;
+ALTER TABLE public.farmer_goals ENABLE ROW LEVEL SECURITY;
+CREATE POLICY goals_owner ON public.farmer_goals FOR ALL TO authenticated USING (user_id = auth.uid()) WITH CHECK (user_id = auth.uid());
+ALTER TABLE public.guide_threads ADD COLUMN goal_id uuid REFERENCES public.farmer_goals(id) ON DELETE SET NULL;
+CREATE INDEX farmer_memories_owner_idx ON public.farmer_memories(user_id, created_at);
+CREATE INDEX farmer_goals_owner_idx ON public.farmer_goals(user_id, created_at);

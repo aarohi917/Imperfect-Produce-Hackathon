@@ -1,0 +1,1 @@
+CREATE POLICY harvest_unattached_upload_cleanup ON storage.objects FOR DELETE TO authenticated USING (bucket_id='harvest-photos' AND (storage.foldername(name))[1]=auth.uid()::text AND NOT EXISTS (SELECT 1 FROM public.harvests h WHERE h.photo_path=storage.objects.name));

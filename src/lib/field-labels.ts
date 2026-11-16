@@ -1,0 +1,7 @@
+import {useT} from './i18n';
+export const CATEGORIES=['quality','pests','weather','quantity','damage','irrigation','shipment','other'] as const;
+export const STATUSES=['submitted','under_review','information_requested','assigned','resolved','closed'] as const;
+export function useFieldLabels(){const t=useT();return {
+  category:{quality:t('品质问题','Crop quality','फसल गुणवत्ता','पीक गुणवत्ता'),pests:t('虫害观察','Pest observation','कीट निरीक्षण','कीड निरीक्षण'),weather:t('天气影响','Weather impact','मौसम प्रभाव','हवामान परिणाम'),quantity:t('重量差异','Quantity discrepancy','मात्रा में अंतर','प्रमाणातील फरक'),damage:t('蔬菜受损','Damaged produce','क्षतिग्रस्त उपज','खराब झालेले उत्पादन'),irrigation:t('灌溉与田况','Irrigation & conditions','सिंचाई और स्थिति','सिंचन आणि स्थिती'),shipment:t('运输与收集','Shipment & collection','शिपमेंट और संग्रह','वाहतूक आणि संकलन'),other:t('其他观察','Other observation','अन्य निरीक्षण','इतर निरीक्षण')},
+  status:{submitted:t('已提交','Submitted','जमा किया गया','सादर केले'),under_review:t('审核中','Under review','समीक्षा जारी','पुनरावलोकन सुरू'),information_requested:t('需要补充信息','Information requested','जानकारी मांगी गई','माहिती मागवली'),assigned:t('已指派','Assigned','सौंपा गया','नियुक्त केले'),resolved:t('已解决','Resolved','हल किया गया','निराकरण झाले'),closed:t('已关闭','Closed','बंद','बंद')},
+};}

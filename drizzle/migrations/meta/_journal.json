@@ -1,0 +1,153 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1794553154841,
+      "tag": "0000_farm_system",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794553175988,
+      "tag": "0001_harvest_photo_policies",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794553629323,
+      "tag": "0002_harvest_data_quality",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1794553825820,
+      "tag": "0003_harvest_validation",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794554328202,
+      "tag": "0004_bilingual_notifications",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1794676612911,
+      "tag": "0005_guide_conversations",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1794678251061,
+      "tag": "0006_farmer_guide_memory_goals",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1794680757406,
+      "tag": "0007_localization_preferences_and_record_currency",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1794684450163,
+      "tag": "0008_farm_monitoring_and_weekly_reports",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1794693030310,
+      "tag": "0009_communication_workspace",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1794693319615,
+      "tag": "0010_communication_atomic_invitations",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1794693478681,
+      "tag": "0011_communication_file_policy_scope",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1794693536897,
+      "tag": "0012_communication_reaction_members",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1794718967973,
+      "tag": "0013_role_scoped_operational_workspaces",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1794721362944,
+      "tag": "0014_field_intelligence_foundation",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1794721447286,
+      "tag": "0015_field_map_atomic_import",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1794721625386,
+      "tag": "0016_field_import_optional_farm",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1794721714984,
+      "tag": "0017_field_report_insert_readback",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1794761120306,
+      "tag": "0018_visual_harvest_reports",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1794761421228,
+      "tag": "0019_visual_report_upload_cleanup",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1794761433795,
+      "tag": "0020_secure_visual_upload_cleanup",
+      "breakpoints": true
+    }
+  ]
+}

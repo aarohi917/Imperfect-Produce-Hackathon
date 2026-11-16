@@ -1,0 +1,12 @@
+CREATE TABLE public.guide_threads (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL DEFAULT auth.uid(), title text NOT NULL DEFAULT '', harvest_id uuid, created_at timestamptz NOT NULL DEFAULT now(), updated_at timestamptz NOT NULL DEFAULT now());
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.guide_threads TO authenticated;
+GRANT ALL ON public.guide_threads TO service_role;
+ALTER TABLE public.guide_threads ENABLE ROW LEVEL SECURITY;
+CREATE POLICY own_guide_threads ON public.guide_threads FOR ALL TO authenticated USING (user_id = auth.uid()) WITH CHECK (user_id = auth.uid());
+CREATE TABLE public.guide_messages (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), thread_id uuid NOT NULL REFERENCES public.guide_threads(id) ON DELETE CASCADE, user_id uuid NOT NULL DEFAULT auth.uid(), message_id text NOT NULL, message jsonb NOT NULL, created_at timestamptz NOT NULL DEFAULT now(), UNIQUE(thread_id,message_id));
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.guide_messages TO authenticated;
+GRANT ALL ON public.guide_messages TO service_role;
+ALTER TABLE public.guide_messages ENABLE ROW LEVEL SECURITY;
+CREATE POLICY own_guide_messages ON public.guide_messages FOR ALL TO authenticated USING (user_id = auth.uid() AND EXISTS (SELECT 1 FROM public.guide_threads t WHERE t.id = thread_id AND t.user_id = auth.uid())) WITH CHECK (user_id = auth.uid() AND EXISTS (SELECT 1 FROM public.guide_threads t WHERE t.id = thread_id AND t.user_id = auth.uid()));
+CREATE INDEX guide_threads_owner ON public.guide_threads(user_id, updated_at DESC);
+CREATE INDEX guide_messages_thread ON public.guide_messages(thread_id, created_at);
