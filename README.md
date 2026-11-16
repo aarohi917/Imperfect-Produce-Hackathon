@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 # Imperfect Produce 
 
-Imperfect Produce is a farm-management application for farmers and organic vegetable businesses, with an initial focus on mainland China. It connects harvest records, Checker approvals, agricultural and financial analysis, field mapping, and an AI farmer's guide in separate farmer and management workspaces.
+Imperfect Produce is a farm-management application for farmers and organic vegetable businesses, with an initial focus on Asia. It connects harvest records, Checker approvals, agricultural and financial analysis, field mapping, and an AI farmer's guide in separate farmer and management workspaces.
 
 ## Purpose
 
@@ -62,14 +62,7 @@ Current operational users are farmers, Checkers, CEOs, and organic vegetable org
 
 ## Development
 
-This project was built with [Lovable](https://lovable.dev). To work locally, install Node.js and npm, clone this repository, and run:
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+This project was built with Lovable
 
 ## Built with
 
@@ -77,10 +70,9 @@ npm run dev
 - TypeScript
 - React
 - Tailwind CSS
-=======
+
 Intended Users
 Current operational users are farmers, Checkers, Chief Officers, and organic vegetable organizations. Middle-income families and left-behind children are intended future customers or social-impact beneficiaries—not groups already served by dedicated consumer or child-support features.
 
 Development
-This project was built with Lovable. 
->>>>>>> 060d8af8e1775cd49608ff8a13573b23804e5107
+
