@@ -62,7 +62,7 @@ Current operational users are farmers, Checkers, CEOs, and organic vegetable org
 
 ## Development
 
-This project was built with Lovable
+This project was built with Lovable. Object detection powered by YOLO-World (Ultralytics), running in-browser via ONNX Runtime Web. Size, quality and reporting pipeline built by Imperfect Produce.
 
 ## Built with
 
@@ -74,5 +74,4 @@ This project was built with Lovable
 Intended Users
 Current operational users are farmers, Checkers, Chief Officers, and organic vegetable organizations. Middle-income families and left-behind children are intended future customers or social-impact beneficiaries—not groups already served by dedicated consumer or child-support features.
 
-Development
 
