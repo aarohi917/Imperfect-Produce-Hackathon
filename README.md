@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# Imperfect Produce · 丑蔬
+# Imperfect Produce 
 
 Imperfect Produce is a farm-management application for farmers and organic vegetable businesses, with an initial focus on mainland China. It connects harvest records, Checker approvals, agricultural and financial analysis, field mapping, and an AI farmer's guide in separate farmer and management workspaces.
 
